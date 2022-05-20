@@ -1,0 +1,22 @@
+//Find a pair with given difference
+public class Sol{
+    public boolean findPair(int arr[], int size, int n)
+    {
+           
+    Arrays.sort(arr);
+    int i=0;
+    int j=1;
+    while(i<size && j<size){
+        if(arr[j]-arr[i]<n){
+            j++;
+        }
+        else if(arr[j]-arr[i]>n){
+            i++;
+        }
+        else if(i != j && (arr[j] - arr[i] == n || arr[i] - arr[j] == n)){
+            return true;
+        }
+    }
+    return false;
+    }
+}
